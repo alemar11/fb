@@ -1,0 +1,5 @@
+Example
+
+NSManagedObjectContextObjectsDidChange investigations
+
+automaticallyMergeChangesFromParent and NSManagedObjectContextObjectsDidChange

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Description" representedClassName="Description" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="img" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="info" inverseEntity="Image" syncable="YES"/>
+        <relationship name="pic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Picture" inverseName="info" inverseEntity="Picture" syncable="YES"/>
+    </entity>
+    <entity name="File" representedClassName="File" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" parentEntity="File" syncable="YES" codeGenerationType="class">
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Description" inverseName="img" inverseEntity="Description" syncable="YES"/>
+    </entity>
+    <entity name="Picture" representedClassName="Picture" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Description" inverseName="pic" inverseEntity="Description" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="File" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Description" positionX="-54" positionY="0" width="128" height="90"/>
+        <element name="Image" positionX="-45" positionY="36" width="128" height="60"/>
+        <element name="Picture" positionX="-27" positionY="54" width="128" height="75"/>
+    </elements>
+</model>
