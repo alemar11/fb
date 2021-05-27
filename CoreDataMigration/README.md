@@ -1,6 +1,6 @@
 # CoreDataMigration
 
-Mapping models for models with at least a derived attributes cause a "Mismatch between mapping and source/destination models" during migration.
+Mapping models for models with at least one derived attribute cause a "Mismatch between mapping and source/destination models" error during a migration.
 
 
 In this sample we try to migrate a model from V1 to V2.
@@ -12,13 +12,12 @@ Steps:
 2. Quit the app.
 3. Relaunch the app to trigger a migration from V1 to V2.
 
-If the migration is done using the inferred mapping model (AppDelegate.swift, line 50) everything works as expected.
+If the migration is done using the inferred mapping model (AppDelegate.swift, line 50) everything works as expected.  
 If the migration is done using a custom mapping model (AppDelegate.swift, line 54), the migration will fail unless we adjust the version hashes programmatically (AppDelegate.swift, lines 56-74).
 
 ---
-  
+
 The same problem happens even if everything is defined programmatically (NSManagedObjectModel, NSEntityMapping...).  
-The entity version hashes change every time if the entity has a derived attribute. 
 
 ---
 
