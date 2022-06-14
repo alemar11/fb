@@ -69,7 +69,7 @@ extension Thread {
     }
 
     return try _syncHelper(execute: work, rescue: { throw $0 }) // 🚩 random crash
-    //return try _syncHelper2(execute: work, rescue: { throw $0 }) // ✅ ok
+    //return try _syncHelper2(execute: work, rescue: { throw $0 }) // ✅ it doesn't crash but the solution is not that great
   }
 
   private func _syncHelper<T>(execute work: () throws -> T, rescue: ((Swift.Error) throws -> (T))) rethrows -> T {
