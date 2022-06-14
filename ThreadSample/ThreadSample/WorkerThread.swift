@@ -27,18 +27,17 @@ final class WorkerThread: Thread {
 }
 
 extension WorkerThread {
-  /// Thread used to access all the PJSIP api.
+  /// Thread used to work with PJSIP api.
   static let shared: WorkerThread = {
-    let thread = WorkerThread(name: "Worker Thread 1", qualityOfService: .userInitiated)
+    let thread = WorkerThread(name: "PJSIP Thread", qualityOfService: .userInitiated)
     thread.start()
     return thread
   }()
 }
 
 extension WorkerThread {
-  /// Thread used to access all the PJSIP api.
-  static let shared2: WorkerThread = {
-    let thread = WorkerThread(name: "Worker Thread 2", qualityOfService: .userInitiated)
+  static let timer: WorkerThread = {
+    let thread = WorkerThread(name: "Timer Thread", qualityOfService: .userInitiated)
     thread.start()
     return thread
   }()
