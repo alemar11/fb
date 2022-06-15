@@ -8,12 +8,11 @@
 import Cocoa
 
 class ViewController: NSViewController {
-  
-  let call = Call()
-  
+
   @IBAction func start(_ sender: Any) {
     (1...1000).forEach { i in
       print(i)
+      let call = Call()
       call.start()
       call.close()
     }
