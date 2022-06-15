@@ -34,7 +34,7 @@ class Stats {
   func start() {
     WorkerThread.timer.sync {
       // In here a Timer is fired to generate stats
-      print("start generatic stats")
+      print("start generating call stats")
     }
   }
   
