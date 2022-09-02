@@ -12,7 +12,7 @@ class Call {
   private let stats = Stats()
 
   func start() {
-    WorkerThread.shared.sync {
+    WorkerThread.shared.sync2 {
       print("start the call")
 
       // In the actual implementation, stats are generated later once some other events
@@ -22,7 +22,7 @@ class Call {
   }
 
   func close() {
-    WorkerThread.shared.sync {
+    WorkerThread.shared.sync2 {
       print("close the call")
       self.stats.stop()
     }
@@ -32,14 +32,14 @@ class Call {
 /// Ongoing call stats generator
 class Stats {
   func start() {
-    WorkerThread.timer.sync {
+    WorkerThread.timer.sync2 {
       // In here a Timer is fired to generate stats
       print("start generating call stats")
     }
   }
   
   func stop() {
-    WorkerThread.timer.sync {
+    WorkerThread.timer.sync2 {
       print("stop stats")
     }
   }
