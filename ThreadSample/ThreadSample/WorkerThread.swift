@@ -76,12 +76,9 @@ extension Thread {
       return try work()
     }
 
-<<<<<<< HEAD
     return try _syncHelper3(execute: work, rescue: { throw $0 })
-=======
     //return try _syncHelper(execute: work, rescue: { throw $0 }) // 🚩 random crash
     //return try _syncHelper2(execute: work, rescue: { throw $0 }) // ✅ it doesn't crash but the solution is not that great
-    return try _syncHelper3(execute: work, rescue: { throw $0 })
   }
 
 
@@ -91,28 +88,27 @@ extension Thread {
       return try work()
     }
     return try _syncHelper4(execute: work, rescue: { throw $0 })
->>>>>>> 35e1760f95ac378b391f9a5fd80415a069dd4f22
   }
 
-  private func _syncHelper3<T>(execute work: @escaping () throws -> T, rescue: ((Swift.Error) throws -> (T))) rethrows -> T {
-
-      var result: T?
-      var error: Swift.Error?
-      let task: (@convention(block) () -> Void)? = {
-        do {
-          result = try work()
-        } catch let catchedError {
-          error = catchedError
-        }
-      }
-      perform(#selector(run(block:)), on: self, with: task, waitUntilDone: true)
-
-      if let error = error {
-        return try rescue(error)
-      } else {
-        return result!
-      }
-  }
+//  private func _syncHelper3<T>(execute work: @escaping () throws -> T, rescue: ((Swift.Error) throws -> (T))) rethrows -> T {
+//
+//      var result: T?
+//      var error: Swift.Error?
+//      let task: (@convention(block) () -> Void)? = {
+//        do {
+//          result = try work()
+//        } catch let catchedError {
+//          error = catchedError
+//        }
+//      }
+//      perform(#selector(run(block:)), on: self, with: task, waitUntilDone: true)
+//
+//      if let error = error {
+//        return try rescue(error)
+//      } else {
+//        return result!
+//      }
+//  }
 
   private func _syncHelper4<T>(execute work: @escaping () throws -> T, rescue: ((Swift.Error) throws -> (T))) rethrows -> T {
     let result = autoreleasepool {
