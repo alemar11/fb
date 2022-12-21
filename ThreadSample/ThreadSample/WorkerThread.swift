@@ -63,22 +63,30 @@ extension Thread {
 
   /// Performs work on current thread synchronously.
   /// - parameter work: Process to be executed.
-  func sync<T>(execute work: () throws -> T) rethrows -> T {
+//  func sync<T>(execute work: () throws -> T) rethrows -> T {
+//    guard Thread.current !== self else {
+//      return try work()
+//    }
+//
+//    return try _syncHelper(execute: work, rescue: { throw $0 }) // 🚩 random crash
+//    //return try _syncHelper2(execute: work, rescue: { throw $0 }) // ⚠️ it crashes rarely but the solution is not that great
+//  }
+
+  func sync<T>(execute work: @escaping () throws -> T) rethrows -> T {
     guard Thread.current !== self else {
       return try work()
     }
 
-    return try _syncHelper(execute: work, rescue: { throw $0 }) // 🚩 random crash
-    //return try _syncHelper2(execute: work, rescue: { throw $0 }) // ✅ it doesn't crash but the solution is not that great
+    return try _syncHelper3(execute: work, rescue: { throw $0 })
   }
 
-  private func _syncHelper<T>(execute work: () throws -> T, rescue: ((Swift.Error) throws -> (T))) rethrows -> T {
-    return try withoutActuallyEscaping(work) { _work in
+  private func _syncHelper3<T>(execute work: @escaping () throws -> T, rescue: ((Swift.Error) throws -> (T))) rethrows -> T {
+
       var result: T?
       var error: Swift.Error?
       let task: (@convention(block) () -> Void)? = {
         do {
-          result = try _work()
+          result = try work()
         } catch let catchedError {
           error = catchedError
         }
@@ -90,7 +98,6 @@ extension Thread {
       } else {
         return result!
       }
-    }
   }
 
   private func _syncHelper2<T>(execute work: () throws -> T, rescue: ((Swift.Error) throws -> (T))) rethrows -> T {
