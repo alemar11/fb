@@ -20,7 +20,7 @@ struct ContentView: View {
       //          Image.init(.smurf1)
       //            .resizable()
       //            .aspectRatio(contentMode: .fit)
-
+      // The workaround, for now, is to define the name programmatically
       Image.init(ImageResource(name: "NamespacedFolder/smurf1", bundle: .main))
         .resizable()
         .aspectRatio(contentMode: .fit)
