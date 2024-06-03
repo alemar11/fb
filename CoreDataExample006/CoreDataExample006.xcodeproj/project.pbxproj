@@ -22,7 +22,6 @@
 		D2BD21D12C0DB9380012AC57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D2BD21D32C0DB9380012AC57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2BD21D62C0DB9380012AC57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D2BD21D92C0DB9380012AC57 /* CoreDataExample006.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataExample006.xcdatamodel; sourceTree = "<group>"; };
 		D2BD21DB2C0DB9390012AC57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2BD21DE2C0DB9390012AC57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2BD21E02C0DB9390012AC57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,7 +65,6 @@
 				D2BD21DB2C0DB9390012AC57 /* Assets.xcassets */,
 				D2BD21DD2C0DB9390012AC57 /* LaunchScreen.storyboard */,
 				D2BD21E02C0DB9390012AC57 /* Info.plist */,
-				D2BD21D82C0DB9380012AC57 /* CoreDataExample006.xcdatamodeld */,
 				D2BD21F62C0DCBFD0012AC57 /* Database.xcdatamodeld */,
 			);
 			path = CoreDataExample006;
@@ -224,7 +222,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -281,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -371,16 +369,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D2BD21D82C0DB9380012AC57 /* CoreDataExample006.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D2BD21D92C0DB9380012AC57 /* CoreDataExample006.xcdatamodel */,
-			);
-			currentVersion = D2BD21D92C0DB9380012AC57 /* CoreDataExample006.xcdatamodel */;
-			path = CoreDataExample006.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		D2BD21F62C0DCBFD0012AC57 /* Database.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

@@ -1,8 +1,8 @@
 // Questions:
 //
-// - Why I can’t mark the “user” relationship in CDCurrentUser as NOT optional?
+// - 1. Why I can’t mark the “user” relationship in CDCurrentUser as NOT optional?
 //
-// - Why updating the user entity associated with the current user using the NSMergeByPropertyObjectTrumpMergePolicy, reset the “user” relationship to nil?
+// - 2. Why updating the CDUser entity associated with the only CDCurrentUser present in the DB (using the NSMergeByPropertyObjectTrumpMergePolicy), the save operation resets the “user” relationship to nil?
 
 import UIKit
 import CoreData
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    let viewContext = appDelegate.persistentContainer.viewContext
+    let viewContext = appDelegate.persistentContainer.viewContext // the policy is set to NSMergeByPropertyObjectTrumpMergePolicy
     
     print("=== Make sure to delete the app between multiple runs ===")
     
