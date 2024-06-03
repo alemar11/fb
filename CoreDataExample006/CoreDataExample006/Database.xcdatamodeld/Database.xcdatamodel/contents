@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CDCurrentUser" representedClassName="CDCurrentUser" syncable="YES">
+        <attribute name="customerID" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uniqueKey" attributeType="String" defaultValueString="immmutable key which makes sure we have only once instance of CurrentUser"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="currentUser" inverseEntity="CDUser"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="uniqueKey"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="CDUser" representedClassName="CDUser" syncable="YES">
+        <attribute name="displayName" attributeType="String"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+        <relationship name="currentUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDCurrentUser" inverseName="user" inverseEntity="CDCurrentUser"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>
