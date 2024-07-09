@@ -15,15 +15,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(windowScene: windowScene)
     
+    // from DTS: disable push animation and apply a slide transition
+    
     let navigationController = UINavigationController()
     let contentView = RootView(navController: navigationController) { navController in
       navController.pushViewController(UIHostingController(rootView: SearchView()), animated: false)
+      
+      // in the DTS sample there was a transition here as well be it seems it's not necessary
+      //navigationController.pushViewController(UIHostingController(rootView: SearchView().transition(.slide)), animated: false)
     }
     let firstController = UIHostingController(rootView: contentView)
     navigationController.setViewControllers([firstController], animated: false)
-    
-    
-
     
     window?.rootViewController = navigationController
     window?.makeKeyAndVisible()
