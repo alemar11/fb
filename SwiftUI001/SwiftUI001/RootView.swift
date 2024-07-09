@@ -40,5 +40,6 @@ struct SearchView: View {
     .navigationTitle("Search Page")
     .navigationBarTitleDisplayMode(.inline)
     .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
+    .transition(.slide)
   }
 }
