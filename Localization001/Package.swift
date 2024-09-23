@@ -7,10 +7,12 @@ let package = Package(
   name: "Localization001",
   defaultLocalization: "en",
   platforms: [.iOS(.v16), .macOS(.v13)],
-  products: [.library(name: "Localization001", targets: ["Localization001"]),],
+  products: [
+    .library(name: "LocalizedPackage1", targets: ["LocalizedPackage1"]),
+    .library(name: "LocalizedPackage2", targets: ["LocalizedPackage2"])
+  ],
   targets: [
-    .target(
-      name: "Localization001"
-    )
+    .target(name: "LocalizedPackage1"),
+    .target(name: "LocalizedPackage2")
   ]
 )

@@ -5,6 +5,8 @@
 //  Created by Alessandro Marzoli on 04/08/23.
 //
 
+// Update Xcode 16: There is now a warning about images with the same name but not for namespaced folders
+
 import SwiftUI
 
 struct ContentView: View {
