@@ -5,6 +5,6 @@ In previous versions of iOS, setting `hidesBottomBarWhenPushed = true` on a view
 However, on iOS 26, this behavior no longer works as expected:
 When pushing a view controller with hidesBottomBarWhenPushed = true, the bottom tab bar remains visible, which breaks the expected navigation experience.
 
-| iOS 18             | iOS 26             |
+| iOS 18             | iOS 26 (UITabBar remains visible and overlaps content) |
 |--------------------|--------------------|
 | ![video iOS 18](ios18.gif) | ![video iOS 26](ios26.gif) |
